@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "poppins", sans-serif;
+    padding: 2rem;
+    background-color: #f0f6ff;
+    color: #0a1a33;
+    transition: all o.3s ease-in-out;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #f5f5f5;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007acc;
+    padding: 1rem;
+    border-radius: 10px;
+    color: #ffffff;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+/* Switch */
+.switch {
+    position: relative;
+    width: 60px;
+    height: 30px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    background-color: #ccc;
+    border-radius: 30px;
+    position: absolute;
+    top: 0;left: 0;right: 0;bottom: 0;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.slider .icon {
+    position: absolute;
+    top: 5px;
+    position: 16px;
+}
+
+.slider .icon:first-child {
+    left: 8px;
+}
+
+.slider .icon:last-child {
+    right: 8px;
+}
+
+input:checked + .slider {
+    background-color: #005999;
+}
+
+/* Main Layout */
+.inputGroup {
+    display: flex;
+    gap: 10px;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #007acc;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button.dark-mode {
+    background-color: darkblue;
+    color: #f5f5f5;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+select {
+    padding: 10px;
+    border-radius: 6px;
+}
+
+/* Tasks */
+ul#taskList {
+    list-style: none;
+}
+
+li .task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    margin-bottom: 10px;
+    padding: 12px;
+    border-left: 6px solid #007acc;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+body.dark-mode li.task {
+    background-color: #1f1f1f;
+}
+
+.task.completed {
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+.task.important {
+    border-left-color: #e63946;
+    font-weight: bold;
+}
+
+/* Buttons in Task */
+.task-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+
+.tasks-buttons button {
+    padding: 5px 8px;
+    font-size: 14px;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width:500px) {
+body {
+    padding: 1rem;
+    font-size: 15px;
+    color: #003355;
+}
+
+header {
+    flex-direction: wrap;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+.inputGroup, .controls {
+    flex-direction: column;
+}
+
+input[type="text"], select, button {
+    width: 100%;
+}
+}
